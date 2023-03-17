@@ -1,9 +1,10 @@
 import streamlit as st
 import sklearn
-import plotly
+import pickle
+model = pickle.load(open('model.pickle', 'rb'))
 
 st.title("Revenue Prediction")
 temp = st.number_input('Input Temperature')
 if st.button("Predict"):
-    x = (-b)/a
-    st.success(f"Phương trình có một nghiệm {x}")
+    revenue = model.predict(temp)
+    st.success(revenue)
