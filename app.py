@@ -8,4 +8,4 @@ st.title("Revenue Prediction")
 temp = st.number_input('Input Temperature', value=0, step=0)
 if st.button("Predict"):
     revenue = model.predict(np.array(temp).reshape(-1, 1))
-    st.success(f"{*revenue}")
+    st.success(f"{revenue[0]}")
